@@ -1,0 +1,95 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Marks Prediction using ML by Anand</title>
+
+  <style>
+
+    h1   {color: #C71585;}  /* CSS code for heading h1 */
+    h2   {color: maroon;}    /* CSS code for heading h2 */
+    h7  {color: #4B0082;}  /* CSS code for heading h7 */
+    h8  {color: maroon}  /* CSS code for heading h8 */
+    /* CSS code for button */
+    
+    .button_css {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button_css:hover {
+      background-color: #3e8e41;
+    }          
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Study Hours to Marks Prediction-->
+  <div>
+    <center>
+    <img src="static/images/banner.png" class="w3-border w3-padding" alt="ML Prediction by Anand Aithal" style="width:100%">
+    </center>
+  </div>
+
+  <style>
+    body {
+      background-image: url("static/images/back.png");
+    }
+    </style>
+  
+  
+ <div class="login">
+	
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>******* Please enter your Study Hours to Predict Marks *******</h1>
+        
+    	<input align="center" type="number" name="study_hours" placeholder="Hours of Study" required="required" width="48" height="10"/>
+    	<br>
+        
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center" ><a class="button_css"  target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong><h7>Lets Go..(Get Results)</h7></strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show the predicted valued got from ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+   <div>
+    <bottomt>
+        <h8> Developed by Anand Aithal</h8>
+    </bottom>
+    </div>
+
+ </div>
+
+</body>
+</html>
